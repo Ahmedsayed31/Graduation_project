@@ -1,2 +1,2 @@
 # Graduation_project
-Kidney disease Classification 
+Kidney diseases Classification 
