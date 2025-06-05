@@ -1,0 +1,3 @@
+ # Ignore environment files
+.env
+model_vgg_lv.onnx
