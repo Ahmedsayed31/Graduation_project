@@ -19,18 +19,18 @@ Cyst
 Normal
 
 ### 📁 Dataset
-Initially gathered and organized from various medical image sources.
+Initially gathered and organized from [Kaggle](https://www.kaggle.com/datasets/nazmul0087/ct-kidney-dataset-normal-cyst-tumor-and-stone/data) : .
 
 Images were split into train, test, and valid folders.
 
 A large number of high-quality CT scans were used per class.
 
 ### 🧪 Techniques
-Used *Convolutional Neural Networks (CNNs)* , *VGG-!6* , *RestNet* , *MobilNet*.
+Used **Convolutional Neural Networks (CNNs)** , **VGG-!6** , **RestNet** , **MobilNet**.
 
 Applied Image Augmentation using ImageDataGenerator to increase dataset size and reduce overfitting.
 
-Achieved high accuracy (~98%) on test data.
+Achieved high accuracy **(~98%)** on test data.
 
 📥 Transition to Object Detection
 🔄 Why shift to detection?
