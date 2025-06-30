@@ -67,7 +67,7 @@ async def analyze_image(file: UploadFile = File(...)):
             img_bytes = io.BytesIO(img_encoded.tobytes())
 
             # Return classification and detection image
-            return StreamingResponse(img_bytes, media_type="image/jpeg", headers={"classification": class_label}),JSONResponse(content=result)
+            return StreamingResponse(img_bytes, media_type="image/jpeg", headers={"classification": class_label})
 
         else:
             # Just return classification if Normal or Cyst
