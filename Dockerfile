@@ -5,9 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt --default-timeout=500
 
-RUN pip install --no-cache-dir gdown
-
-RUN gdown --id 1DotvCz1zV57eZ--TeoSrNLUcMZho33JE -O Kidney_model.onnx
+COPY models/ models/
 
 COPY main.py .
 

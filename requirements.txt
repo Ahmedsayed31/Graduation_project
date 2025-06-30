@@ -5,5 +5,4 @@ numpy
 onnxruntime
 opencv-python
 ultralytics
-Streamlit
 python-multipart

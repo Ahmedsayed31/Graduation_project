@@ -10,7 +10,7 @@ import cv2
 app = FastAPI()
 
 # ---- Load the classification ONNX model ---- #
-classification_model_path = "model_vgg_lv.onnx"
+classification_model_path = "models/model_vgg_lv.onnx"
 session = ort.InferenceSession(classification_model_path)
 
 # Classes
@@ -48,7 +48,7 @@ async def analyze_image(file: UploadFile = File(...)):
         if class_label in ["Tumor", "Stone"]:
             global yolo_model
             if yolo_model is None:
-                yolo_model = YOLO("best.pt")  # Load YOLO only if needed
+                yolo_model = YOLO("models/best.pt")  # Load YOLO only if needed
 
             original_image = np.array(pil_image)
             results = yolo_model(original_image)[0]

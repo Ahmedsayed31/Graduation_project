@@ -8,7 +8,7 @@ from ultralytics import YOLO
 warnings.filterwarnings("ignore")
 
 # Load the model
-model_path = "model_vgg_lv.onnx"
+model_path = "models/model_vgg_lv.onnx"
 session = ort.InferenceSession(model_path)
 
 # Get the input and output names to use in the inference
@@ -39,7 +39,7 @@ def preprocess_image(file):
 
 
 def load_model():
-    model = YOLO('best.pt')
+    model = YOLO('models/best.pt')
     return model
 
 
