@@ -1,8 +1,8 @@
-fastapi
-uvicorn
-Pillow
-numpy
-onnxruntime
-opencv-python
-ultralytics
-python-multipart
+fastapi==0.110.1
+uvicorn==0.29.0
+Pillow==10.2.0
+numpy==1.26.4
+onnxruntime==1.17.3
+opencv-python==4.9.0.80
+ultralytics==8.1.40
+python-multipart==0.0.9
