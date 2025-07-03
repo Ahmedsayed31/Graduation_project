@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import StreamingResponse, JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 from PIL import Image
 import io
@@ -9,12 +10,21 @@ import cv2
 
 app = FastAPI()
 
+# ✅ CORS middleware to allow frontend requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # ---- Load the classification ONNX model ---- #
 classification_model_path = "models/model_vgg_lv.onnx"
 session = ort.InferenceSession(classification_model_path)
 
 # Classes
-classes = {0:'Cyst', 1:'Normal', 2:'Stone', 3:'Tumor'}
+classes = {0: 'Cyst', 1: 'Normal', 2: 'Stone', 3: "Tumor"}
 input_name = session.get_inputs()[0].name
 output_name = session.get_outputs()[0].name
 
